@@ -3,7 +3,7 @@
   .texture
   nav.navbar.navbar-expand-lg.navbar-light.fixed-top.navbar-slim
     .container
-      a.navbar-brand(href='https://www.facebook.com/toubanyoku.syoutou/' target="_blank")
+      a.navbar-brand(href='#' v-on:click.prevent="scrollTop()")
         img(src='../assets/images/logo.png')
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation' id="nav-mobile")
         span.navbar-toggler-icon
@@ -78,12 +78,8 @@
                 tr
                   th(scope='row') 8天使用5次
                   td $1500
-                tr
-                  th(scope='row') 30日天天使用
-                  td $5000
             ul.text-notice.mt-3
               li 優惠卷一本為10張，使用期限為一年。
-              li 多一人共用+$1000。
     section#section_view.my-5
       .container
         h2.text-center 店內景觀
@@ -101,6 +97,10 @@
             img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider6.jpg', alt='')
           figure.figure
             img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider7.jpg', alt='')
+          figure.figure
+            img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider8.jpg', alt='')
+          figure.figure
+            img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider10.jpg', alt='')
         .slick.slider-nav
           figure.figure
             img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider1.jpg', alt='')
@@ -114,6 +114,10 @@
             img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider6.jpg', alt='')
           figure.figure
             img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider7.jpg', alt='')
+          figure.figure
+            img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider8.jpg', alt='')
+          figure.figure
+            img.figure-img.img-fluid.rounded.mx-auto(src='../assets/images/slider10.jpg', alt='')
     section#section_contact_us.mt-3
       .container
         h2.text-center 聯絡管道
@@ -198,8 +202,11 @@ export default {
   },
   methods:{
     isMobile : function(){
-        try{ document.createEvent("TouchEvent"); return true; }
-        catch(e){ return false;}
+      try{ document.createEvent("TouchEvent"); return true; }
+      catch(e){ return false;}
+    },
+    scrollTop: function(){
+      $('html,body').animate({scrollTop: 0});
     }
   }
 }
