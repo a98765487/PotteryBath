@@ -1,0 +1,138 @@
+@import "~bootstrap/scss/functions";
+@import "/_variables" ;
+@import "~bootstrap/scss/bootstrap";
+@import "/slick/slick-theme" ;
+@import "/slick/slick" ;
+
+//測試用
+*{
+    // border: solid 1px #666;
+    color:$themeColor;
+}
+.texture{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: url('./assets/images/texture.png');
+    z-index: 2000;
+    pointer-events: none;
+}
+nav{
+    background-color: $white;
+    box-shadow: 5px 5px 5px #888888;
+}
+nav{
+    .fb-logo img{
+        margin-left: 80px;
+        display: block;
+        width: 30px;
+        @include media-breakpoint-only(xs) {
+            display: none;
+        }
+        @include media-breakpoint-only(md) {
+            display: none;
+        }
+        @include media-breakpoint-only(lg) {
+            display: none;
+        }
+    }
+}
+nav.navbar-slim{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+header.jumbotron{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-image: url('./assets/images/bg1cover.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    .container{
+        color: $white;
+        padding:300px 0px;
+        h1,h4{
+            font-weight: bold;
+        }
+        h4{
+            color: $gray-500;
+        }
+    }
+    hr{
+        max-width: 50px;
+        border: solid 2px $white;
+    }
+}
+main{
+    section#section_about_us{
+        @include media-breakpoint-only(xs) {
+            .row.contrast{
+                flex-direction: column-reverse;
+            }
+        }
+        .text-info{
+            text-align: justify;
+        }
+    }
+    section#section_price.bg{
+        background-image: url('./assets/images/bg3cover.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        h2{
+            color:$white;
+        }
+        table th,td{
+            color:$white;
+        }
+        ul>li{
+            color:$white;
+        }
+    }
+    section#section_view{
+        img{
+            max-width: 60%;
+        }
+        @include media-breakpoint-only(xs) {
+            .slider-nav{
+                display: none;
+            }
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    section#section_contact_us.mt-3{
+        .contact_text_info{
+            position:relative;
+            border: solid 2px $themeColor;
+            box-shadow: 1px 1px 5px #333;
+            img{
+                display: block;
+                width: 50%;
+                position: absolute;
+                right: 10px;
+                bottom:10px;
+                @include media-breakpoint-only(xs) {
+                    display: none;
+                }
+            }
+        }
+        .gmap{
+            height:440px;
+        }
+    }
+}
+footer{
+    margin-top:50px;
+    margin-bottom:0px;
+    background-color: $themeColor;
+    height: 50px;
+    p{
+        font-size:14px;
+        line-height: 50px;
+        color:$white;
+        margin-bottom:0px;
+    }
+}
